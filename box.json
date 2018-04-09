@@ -1,6 +1,6 @@
 {
-    "directories": ["src"],
-    "main": "src/index.php",
+    "directories": ["www"],
+    "main": "www/index.php",
     "output": "dist/index.phar",
     "stub": true,
     "shebang": false
