@@ -1,0 +1,8 @@
+#!/bin/sh
+cd "$(dirname $0)/.."
+BASE_DIR=`pwd`
+
+./bin/build
+
+ftpcurl=$(<.ftpcurl)
+curl -T dist/index.php $ftpcurl
