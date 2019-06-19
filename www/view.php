@@ -4,76 +4,95 @@
   <meta charset="utf-8">
   <title>Online UUID Version 4 Generator and Microservice</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <link rel="stylesheet" href="https://unpkg.com/abrusco@0.6.3/css/abrusco.min.css">
+  <link rel="shortcut icon" href="https://www.lemmonjuice.com/favicon.ico">
   <style media="screen">
-  .pre-wrap {
-   white-space: pre-wrap;
-   white-space: -moz-pre-wrap;
-   white-space: -pre-wrap;
-   white-space: -o-pre-wrap;
-   word-wrap: break-word;
+  .reset {
+       -moz-appearance: none;
+    -webkit-appearance: none;
+            appearance: none;
+    display: block;
+    border: 0;
+    padding: 0;
+    margin: 0;
+    font: inherit;
+    line-height: inherit;
+    width: 100%;
   }
+  .pre-wrap {
+     white-space: pre-wrap;
+     white-space: -moz-pre-wrap;
+     white-space: -pre-wrap;
+     white-space: -o-pre-wrap;
+     word-wrap: break-word;
+   }
   </style>
+  <link rel="stylesheet" href="https://unpkg.com/abrusco@0.7.4/css/abrusco.min.css">
+  <link rel="stylesheet" href="https://abrusco.com/bundle.css">
 </head>
-<body class="col justify-between">
+<body class="col max48">
 
-  <header class="p05 sd-p1">
-    <h1 class="p05 sd-p1 h4 lh4 fw600">UUID Version 4</h1>
-    <nav class="p05 sd-p1">
-      <a class="ul" href="https://github.com/lemmon/uuid-php">Github</a>
-    </nav>
+  <header class="py2 md-px1 ld-p2">
+    <div class="p075">
+      <h1 class="p025 h2 lh2 fw700">UUID Version 4</h1>
+      <div class="p025">
+        <p class="lh4 color-black-50">Online generator and microservice.</p>
+      </div>
+    </div>
   </header>
 
-  <main class="max48">
+  <div class="ld-px1">
+    <hr class="px1 div color-black-10">
+  </div>
 
-    <section class="sd-p1">
-      <div class="p05">
+  <main class="span1 py1 ld-py2"><div class="p05">
 
-        <h1 class="p05 fw600 lh4">Your UUID v4</h1>
-
-        <div class="p05">
-          <pre id="uuid-result" class="code pre-wrap ac bg-black-05 p2 lh5"><?= $data['uuid'] ?></pre>
-        </div>
-        <script>
-        window.getSelection().selectAllChildren(document.getElementById('uuid-result'));
-        </script>
-
+    <section class="py1 md-px1 ld-p2"><div class="p05">
+      <div class="copy lh4">
+        <h2>Your UUID v4</h2>
+        <figure>
+          <input type="text" id="uuid" class="reset code pre-wrap ac bg-black-05 p2 lh5" name="uuid" value="<?= $data['uuid'] ?>" readonly autofocus>
+        </figure>
       </div>
-    </section>
-    <section class="sd-p1">
-      <div class="p05">
+    </div></section>
+    <script>
+    uuid.focus();
+    uuid.select();
+    </script>
 
-        <h1 class="p05 fw600 lh4">Microservice</h1>
+    <section class="py1 md-px1 ld-p2"><div class="p05">
+      <div class="copy lh4">
+        <h2>Microservice</h2>
+        <h3>JSON</h3>
+        <pre class="cli"><span class="dollar">curl --header "Accept: application/json" uuid.lemmonjuice.com</span>
+<div class="mt05"><?= json_encode($data) ?></div></pre>
+        <h3>Plain Text</h3>
+        <pre class="cli"><span class="dollar">curl --header "Accept: text/plain" uuid.lemmonjuice.com</span>
+<div class="mt05"><?= $data['uuid'] ?></div></pre>
+      </div>
+    </div></section>
 
-        <h2 class="p05">JSON</h2>
-
-        <div class="p05">
-          <pre class="code pre-wrap f2 lh4 bg-black-05 p1"><code class="">curl --header "Accept: application/json" uuid.lemmonjuice.com
-<span class="color-black-40"><?= json_encode($data) ?></span></code></pre>
-        </div>
-
-        <h2 class="p05">Plain Text</h2>
-
-        <div class="p05">
-          <pre class="code pre-wrap f2 lh4 bg-black-05 p1"><code class="">curl --header "Accept: text/plain" uuid.lemmonjuice.com
-<span class="color-black-40"><?= $data['uuid'] ?></span></code></pre>
-        </div>
-
-        <h1 class="p05 fw600 lh4">UUID Elsewhere</h1>
-
+    <section class="py1 md-px1 ld-p2"><div class="p05">
+      <div class="copy lh4">
+        <h2>UUID Elsewhere</h2>
         <ul class="p05 lh4 ml1">
           <li><a class="ul" target="_blank" href="https://en.wikipedia.org/wiki/Universally_unique_identifier">Wikipedia</a></li>
         </ul>
-
       </div>
-    </section>
+    </div></section>
 
-  </main>
+  </div></main>
 
-  <footer class="p1 sd-p2 color-black-20">
-    <p>created by
-      <a class="a-ul color-black-40" href="http://www.lemmonjuice.com">lemmon</a> |
-      <a class="a-ul color-black-40" href="https://github.com/lemmon/uuid-php">github</a></p>
+  <div class="ld-px1">
+    <hr class="px1 div color-black-10">
+  </div>
+
+  <footer class="py2 md-px1 ld-p2">
+    <nav class="lh4">
+      <ul class="row flex-wrap py05">
+        <li class="px1 py05"><a class="ul" target="_blank" href="https://github.com/lemmon/uuid-php">github</a></li>
+        <li class="px1 py05">created by <a class="ul" target="_blank" href="http://www.lemmonjuice.com/">lemmon</a></li>
+      </ul>
+    </nav>
   </footer>
 
 </body>
