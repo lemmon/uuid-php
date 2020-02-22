@@ -1,8 +1,17 @@
 #!/bin/sh
 cd "$(dirname $0)/.."
-BASE_DIR=`pwd`
+
+HOST=37.9.175.3
+USER=lemmonjuice.com
+DEST=/sub/uuid
+PASS=$(security find-internet-password -s $HOST -a $USER -r ftps -w)
+DIST=dist
 
 ./bin/build
 
-ftpcurl=$(<.ftpcurl)
-curl -T dist/index.php $ftpcurl
+ftpup \
+  -i '**/.DS_Store' \
+  -u ${USER} \
+  -p ${PASS} \
+  ${DIST} \
+  ${HOST}${DEST}
