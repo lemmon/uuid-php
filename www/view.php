@@ -18,6 +18,7 @@
     line-height: inherit;
     width: 100%;
   }
+  /*
   .pre-wrap {
      white-space: pre-wrap;
      white-space: -moz-pre-wrap;
@@ -25,13 +26,13 @@
      white-space: -o-pre-wrap;
      word-wrap: break-word;
    }
+   */
   </style>
-  <link rel="stylesheet" href="https://unpkg.com/abrusco@0.7.4/css/abrusco.min.css">
-  <link rel="stylesheet" href="https://abrusco.com/bundle.css">
+  <link rel="stylesheet" href="https://abrusco.com/master.css">
 </head>
-<body class="col max48">
+<body class="col max80 mx">
 
-  <header class="py2 md-px1 ld-p2">
+  <header class="max51 py2 sd-px1 md-p2">
     <div class="p075">
       <h1 class="p025 h2 lh2 fw700">UUID Version 4</h1>
       <div class="p025">
@@ -40,53 +41,57 @@
     </div>
   </header>
 
-  <div class="ld-px1">
+  <div class="max51 md-px1">
     <hr class="px1 div color-black-10">
   </div>
 
-  <main class="span1 py1 ld-py2"><div class="p05">
+  <main class="span1 max75 py1 sd-px1 md-py2"><div class="py05">
 
-    <section class="py1 md-px1 ld-p2"><div class="p05">
-      <div class="copy lh4">
-        <h2>Your UUID v4</h2>
-        <figure>
-          <input type="text" id="uuid" class="reset code pre-wrap ac bg-black-05 p2 lh5" name="uuid" value="<?= $data['uuid'] ?>" readonly autofocus>
-        </figure>
-      </div>
-    </div></section>
-    <script>
-    uuid.focus();
-    uuid.select();
-    </script>
+    <div class="px1">
 
-    <section class="py1 md-px1 ld-p2"><div class="p05">
-      <div class="copy lh4">
-        <h2>Microservice</h2>
-        <h3>JSON</h3>
-        <pre class="cli"><span class="dollar">curl --header "Accept: application/json" uuid.lemmonjuice.com</span>
-<div class="mt05"><?= json_encode($data) ?></div></pre>
-        <h3>Plain Text</h3>
-        <pre class="cli"><span class="dollar">curl --header "Accept: text/plain" uuid.lemmonjuice.com</span>
-<div class="mt05"><?= $data['uuid'] ?></div></pre>
-      </div>
-    </div></section>
+        <section class="py1 md-px1 md-py2"><div class="py05">
+          <div class="copy lh4">
+            <h2>Your UUID v4</h2>
+            <figure>
+              <input type="text" id="uuid" class="reset code pre-wrap ac bg-black-05 p2 lh5" name="uuid" value="<?= $data['uuid'] ?>" readonly autofocus>
+            </figure>
+          </div>
+        </div></section>
+        <script>
+        uuid.focus();
+        uuid.select();
+        </script>
 
-    <section class="py1 md-px1 ld-p2"><div class="p05">
-      <div class="copy lh4">
-        <h2>UUID Elsewhere</h2>
-        <ul class="p05 lh4 ml1">
-          <li><a class="ul" target="_blank" href="https://en.wikipedia.org/wiki/Universally_unique_identifier">Wikipedia</a></li>
-        </ul>
-      </div>
-    </div></section>
+        <section class="py1 md-px1 md-py2"><div class="py05">
+          <div class="copy lh4">
+            <h2>Microservice</h2>
+            <h3>JSON</h3>
+            <pre class="cli"><code class="dollar">curl --header "Accept: application/json" uuid.lemmonjuice.com</code></pre>
+            <pre class="cli"><code><?= json_encode($data) ?></code></pre>
+            <h3>Plain Text</h3>
+            <pre class="cli"><code class="dollar">curl --header "Accept: text/plain" uuid.lemmonjuice.com</code></pre>
+            <pre class="cli"><code><?= $data['uuid'] ?></code></pre>
+          </div>
+        </div></section>
+
+        <section class="py1 md-px1 md-py2"><div class="py05">
+          <div class="copy lh4">
+            <h2>UUID Elsewhere</h2>
+            <ul>
+              <li><a target="_blank" href="https://en.wikipedia.org/wiki/Universally_unique_identifier">Wikipedia</a></li>
+            </ul>
+          </div>
+        </div></section>
+
+    </div>
 
   </div></main>
 
-  <div class="ld-px1">
+  <div class="max51 md-px1">
     <hr class="px1 div color-black-10">
   </div>
 
-  <footer class="py2 md-px1 ld-p2">
+  <footer class="max51 py2 sd-p1 md-p2">
     <nav class="lh4">
       <ul class="row flex-wrap py05">
         <li class="px1 py05"><a class="ul" target="_blank" href="https://github.com/lemmon/uuid-php">github</a></li>
